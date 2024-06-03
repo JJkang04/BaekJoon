@@ -32,10 +32,10 @@ int main() {
 
 		for (ll i = 2; i <= 2 * n; ++i) {
 			if (isPrime[i]) { //여기서 true인 것이 소수. 이 수의 배수(2n보다 작거나 같은)을 false처리
-				if (i > n) {
+				if (i > n) { //n보다 큰 것을 count. 어차피 끝 범위는 2n으로 정해져 있기 때문에.
 					countPrime++;
 				}
-				for (ll j = i * i; j <= 2 * n; j += i) {
+				for (ll j = i * i; j <= 2 * n; j += i) { //제곱하면 int 범위보다 커질 수 있기 때문에 long long으로 지정.
 					isPrime[j] = false;
 				}
 			}
