@@ -39,21 +39,16 @@ int main() {
 				}
 			}
 			if (sum == 100) {
-				int count = 0;
 				for (int l = 0; l < 9; ++l) {
 					if (l == i || l == j) {
 						continue;
 					}
-					count++;
-					if (count == 7) {
-						cout << vec[l];
-						return 0;
-					}
 					cout << vec[l] << '\n';
-					}
 				}
+				return 0;
 			}
 		}
+	}
 
 	return 0;
 }
