@@ -13,11 +13,8 @@ int m_array[7] = {};
 
 int main() {
 	
-	int n;
-	cin >> n;
-
-	int k;
-	cin >> k;
+	int n,k;
+	cin >> n >> k;
 
 	bool gen;
 
@@ -32,8 +29,8 @@ int main() {
 	int ans = 0;
 
 	for (int i = 1; i < 7; ++i) {
-		ans += ceil(f_array[i] / 2.0);
-		ans += ceil(m_array[i] / 2.0);
+		if (f_array[i] != 0) ans += ceil(f_array[i] / (k*1.0));
+		if (m_array[i] != 0) ans += ceil(m_array[i] / (k*1.0));
 	}
 	cout << ans;
 
