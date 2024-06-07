@@ -16,7 +16,7 @@ typedef long long ll;
 
 
 
-const int MX = 1000005;
+const int MX = 10000;
 int dat[MX];
 int pos = 0;
 
@@ -56,6 +56,9 @@ void empty() {
 }
 
 int main(void) {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+
 	int n;
 	cin >> n;
 
