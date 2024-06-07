@@ -27,7 +27,6 @@ int main(void) {
 
 	vector<int> tar_vec(n); //목표 수열 저장 벡터
 	vector<char> ans_vec; // 답변 저장 벡터
-	vector<int> trash; //pop된  
 
 	for (int i = 0; i < n; ++i) {
 		cin >> tar_vec[i];
@@ -48,10 +47,10 @@ int main(void) {
 		else if(stk.top() == tar_vec[target]) {
 			ans_vec.push_back('-');
 			target++;
-			stk.pop();
 			if (target == n) {
 				break;
 			}
+			stk.pop();
 		}
 		else {
 			stk.push(num++);
