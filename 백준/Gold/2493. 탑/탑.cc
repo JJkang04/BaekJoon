@@ -17,7 +17,7 @@ typedef long long ll;
 int n, tow;
 
 int main() {
-	ios::sync_with_stdio(false);
+	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 
 	cin >> n;
@@ -25,23 +25,15 @@ int main() {
 	stack<pair<int, int>> tower; //first는 타워의 길이, second는 타워의 번호
 	vector<int> vec;
 
+	tower.push({ 100000001,0 });
 
 	for (int i = 1; i <= n; ++i) {
 		cin >> tow;
-		while (true) {
-			if (tower.empty()) {
-				vec.push_back(0);
-				break;
-			}
-			else if(tower.top().first < tow){
-				tower.pop();
-			}
-			else {
-				vec.push_back(tower.top().second);
-				break;
-			}
+		while (tower.top().first < tow) {
+			tower.pop();
 		}
-		tower.push(make_pair(tow, i));
+		cout << tower.top().second << " ";
+		tower.push({tow,i});
 	}
 	for (int i = 0; i < vec.size(); ++i) {
 		cout << vec[i] << ' ';
