@@ -18,15 +18,17 @@ using namespace std;
 
 typedef long long ll;
 
+int dat[2000000];
+int head = 0;
+int tail = 0;
+
+
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
 	
 	int n;
 	cin >> n;
-
-	queue<int> que;
-
 
 	while (n--) {
 		string op;
@@ -35,31 +37,30 @@ int main() {
 		if (op == "push") {
 			int x;
 			cin >> x;
-			que.push(x);
+			dat[tail++] = x;
 		}
 		else if (op == "pop") {
-			if (que.empty()) {
+			if (head == tail) {
 				cout << -1 << '\n';
 			}
 			else {
-				cout << que.front()<<'\n';
-				que.pop();
+				cout << dat[head++]<<'\n';
 			}
 		}
 		else if (op == "size") {
-			cout << que.size()<<'\n';
+			cout << tail - head <<'\n';
 		}
 		else if (op == "empty") {
-			if (que.empty()) cout << 1 << '\n';
+			if (head == tail) cout << 1 << '\n';
 			else cout << 0 << '\n';
 		}
 		else if (op == "front") {
-			if (que.empty()) cout << -1 << '\n';
-			else cout << que.front()<<'\n';
+			if (head == tail ) cout << -1 << '\n';
+			else cout << dat[head] <<'\n';
 		}
 		else if (op == "back") {
-			if (que.empty()) cout << -1 << '\n';
-			else cout << que.back()<<'\n';
+			if (head == tail ) cout << -1 << '\n';
+			else cout << dat[tail-1]<<'\n';
 		}
 	}
 	return 0;
