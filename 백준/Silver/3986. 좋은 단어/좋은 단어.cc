@@ -34,10 +34,6 @@ int main() {
 
 		deque<char> deq;
 
-		if (str.size() % 2 != 0) {
-			continue;
-		}
-
 		for (int i = 0; i < str.size(); ++i) {
 
 			if (deq.empty()) {
